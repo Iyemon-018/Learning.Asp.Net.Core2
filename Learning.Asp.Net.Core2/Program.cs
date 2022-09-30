@@ -1,7 +1,14 @@
+using Learning.Asp.Net.Core2.Domain;
+using Learning.Asp.Net.Core2.infrastructure.Db;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+// .NET6 ‚ÍˆÈ‰º‚Ì‚æ‚¤‚È•û–@‚Å DI ‚Å‚«‚éB
+// cf. https://learn.microsoft.com/ja-jp/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-6.0
+builder.Services.AddSingleton<IUnitOfWork>(_ => Factories.UnitOfWork());
 
 var app = builder.Build();
 

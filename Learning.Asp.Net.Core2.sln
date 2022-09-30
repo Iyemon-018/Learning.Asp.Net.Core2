@@ -5,6 +5,10 @@ VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learning.Asp.Net.Core2", "Learning.Asp.Net.Core2\Learning.Asp.Net.Core2.csproj", "{78BCD57B-9236-4819-9A32-7822B7A3A094}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learning.Asp.Net.Core2.Domain", "Learning.Asp.Net.Core2.Domain\Learning.Asp.Net.Core2.Domain.csproj", "{8B1CD107-53D7-47D1-B16D-99003BACF496}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learning.Asp.Net.Core2.infrastructure.Db", "Learning.Asp.Net.Core2.infrastructure.Db\Learning.Asp.Net.Core2.infrastructure.Db.csproj", "{A4E47828-F68B-4328-807C-43C06214EEA6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{78BCD57B-9236-4819-9A32-7822B7A3A094}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78BCD57B-9236-4819-9A32-7822B7A3A094}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78BCD57B-9236-4819-9A32-7822B7A3A094}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B1CD107-53D7-47D1-B16D-99003BACF496}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B1CD107-53D7-47D1-B16D-99003BACF496}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B1CD107-53D7-47D1-B16D-99003BACF496}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B1CD107-53D7-47D1-B16D-99003BACF496}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4E47828-F68B-4328-807C-43C06214EEA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4E47828-F68B-4328-807C-43C06214EEA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4E47828-F68B-4328-807C-43C06214EEA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4E47828-F68B-4328-807C-43C06214EEA6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
