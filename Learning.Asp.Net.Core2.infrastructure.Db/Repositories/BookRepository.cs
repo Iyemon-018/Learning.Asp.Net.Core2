@@ -23,4 +23,9 @@ internal sealed class BookRepository : IBookRepository
                    }
                };
     }
+
+    public async Task<IEnumerable<Book>> GetAllAsync()
+    {
+        return await Task.Run(GetAll);
+    }
 }
