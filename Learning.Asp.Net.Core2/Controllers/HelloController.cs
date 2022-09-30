@@ -8,4 +8,10 @@ public class HelloController : Controller
     {
         return Content("Hello World.");
     }
+
+    public IActionResult Greet()
+    {
+        ViewBag.Message = "こんにちは、世界！";
+        return View();
+    }
 }
