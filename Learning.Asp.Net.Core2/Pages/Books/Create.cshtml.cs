@@ -17,6 +17,7 @@ public class CreateModel : PageModel
         Book = new Book();
     }
 
+    [BindProperty]
     public Book Book { get; set; }
 
     public IActionResult OnGet()
@@ -24,7 +25,7 @@ public class CreateModel : PageModel
         return Page();
     }
 
-    public async Task<IActionResult> OnPostAsync()
+    public IActionResult OnPost()
     {
         if (!ModelState.IsValid) return Page();
 
