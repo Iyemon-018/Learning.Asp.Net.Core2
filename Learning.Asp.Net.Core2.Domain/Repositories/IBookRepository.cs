@@ -7,4 +7,6 @@ public interface IBookRepository
     IEnumerable<Book> GetAll();
 
     Task<IEnumerable<Book>> GetAllAsync();
+
+    void Add(Book item);
 }
