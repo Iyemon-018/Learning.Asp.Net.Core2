@@ -8,7 +8,11 @@ public interface IBookRepository
 
     Task<IEnumerable<Book>> GetAllAsync();
 
+    Task<Book> FindAsync(int id);
+
     void Add(Book item);
 
     void Update(Book item);
+
+    void Remove(Book item);
 }

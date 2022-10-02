@@ -32,6 +32,11 @@ internal sealed class BookRepository : IBookRepository
         return await Task.Run(GetAll);
     }
 
+    public async Task<Book> FindAsync(int id)
+    {
+        return (await GetAllAsync()).First(book => book.Id == id);
+    }
+
     public void Add(Book item)
     {
         _all.Add(item);
@@ -46,5 +51,13 @@ internal sealed class BookRepository : IBookRepository
         target.Price     = item.Price;
         target.Publisher = item.Publisher;
         target.Sample    = item.Sample;
+    }
+
+    public void Remove(Book item)
+    {
+        var target = _all.FirstOrDefault(book => book.Id == item.Id);
+        if (target is null) return;
+
+        _all.Remove(target);
     }
 }
