@@ -36,4 +36,15 @@ internal sealed class BookRepository : IBookRepository
     {
         _all.Add(item);
     }
+
+    public void Update(Book item)
+    {
+        var target = _all.FirstOrDefault(book => book.Id == item.Id);
+        if (target is null) return;
+
+        target.Title     = item.Title;
+        target.Price     = item.Price;
+        target.Publisher = item.Publisher;
+        target.Sample    = item.Sample;
+    }
 }
