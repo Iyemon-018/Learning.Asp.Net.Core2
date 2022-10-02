@@ -1,4 +1,5 @@
 ﻿@page
+@using Learning.Asp.Net.Core2.Domain;
 @model Learning.Asp.Net.Core2.Pages.Books.CreateModel
 @{
     ViewData["Title"] = "Create";
@@ -24,8 +25,10 @@
         </div>
         <div class="form-group">
             <label asp-for="Book.Publisher" class="control-label"></label>
-            <input asp-for="Book.Publisher" class="form-control" />
-            <span asp-validation-for="Book.Publisher" class="text-danger"></span>
+                @*            <input asp-for="Book.Publisher" class="form-control" />*@
+            @*<span asp-validation-for="Book.Publisher" class="text-danger"></span>*@
+            <select asp-for="Book.Publisher" class="form-control" asp-items="Model.Publishes"></select>
+            <select asp-for="Book.Publisher" class="form-control" asp-items="Html.GetEnumSelectList<PublisherEnum>()"></select>
         </div>
         <div class="form-group form-check">
             <label class="form-check-label">

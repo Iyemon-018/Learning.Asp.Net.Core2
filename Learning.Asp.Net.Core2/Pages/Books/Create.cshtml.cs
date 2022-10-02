@@ -5,6 +5,7 @@ namespace Learning.Asp.Net.Core2.Pages.Books;
 
 using Domain;
 using Domain.Entities;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 public class CreateModel : PageModel
 {
@@ -20,8 +21,12 @@ public class CreateModel : PageModel
     [BindProperty]
     public Book Book { get; set; }
 
-    public IActionResult OnGet()
+    public SelectList Publishes { get; set; }
+
+    public async Task<IActionResult> OnGet()
     {
+        var list = (await _unitOfWork.BookRepository.GetAllAsync()).Select(book => new {Publisher = book.Publisher}).Distinct();
+        Publishes = new SelectList(list, "Publisher", "Publisher");
         return Page();
     }
 

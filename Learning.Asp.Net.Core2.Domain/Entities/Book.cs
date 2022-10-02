@@ -1,6 +1,7 @@
 ﻿namespace Learning.Asp.Net.Core2.Domain.Entities;
 
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 public sealed class Book
 {
@@ -10,6 +11,7 @@ public sealed class Book
     public string Title { get; set; }
 
     [DisplayName("価格")]
+    [DataType(DataType.Currency)]
     public int Price { get; set; }
 
     [DisplayName("出版社")]
