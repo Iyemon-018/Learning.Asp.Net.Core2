@@ -1,10 +1,29 @@
 using Learning.Asp.Net.Core2.Domain;
+using Learning.Asp.Net.Core2.Filters;
 using Learning.Asp.Net.Core2.infrastructure.Db;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+// Filter を追加する場合は以下の方法で実現できる。
+builder.Services.AddRazorPages()
+       .AddMvcOptions(options =>
+        {
+            options.Filters.Add(new LogFilter());
+        });
+
+
+// 特定のページのみフィルターを追加するのであれば以下のようになる。
+builder.Services
+       .AddRazorPages(options =>
+        {
+            options.Conventions.AddFolderApplicationModelConvention("/Books"
+                  , model => model.Filters.Add(new LogFilter()));
+        });
+
 
 // .NET6 は以下のような方法で DI できる。
 // cf. https://learn.microsoft.com/ja-jp/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-6.0
