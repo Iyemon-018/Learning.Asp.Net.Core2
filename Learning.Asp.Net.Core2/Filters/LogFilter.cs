@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 
 // OnGet や OnPost など、ハンドラの前後などで共通の処理を実行するための仕組みがフィルター
 // 非同期の IAsyncPageFilter も用意されている。
+// cf. https://learn.microsoft.com/ja-jp/aspnet/core/razor-pages/filter?view=aspnetcore-6.0
 public sealed class LogFilter : IPageFilter
 {
     // それぞれのメソッドの引数はフィルターのコンテキスト情報

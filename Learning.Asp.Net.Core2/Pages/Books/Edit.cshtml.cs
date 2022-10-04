@@ -21,7 +21,7 @@ public class EditModel : PageModel
     public async Task<IActionResult> OnGetAsync(int? id)
     {
         if (!id.HasValue) return NotFound();
-
+        
         Book = (await _unitOfWork.BookRepository.GetAllAsync()).FirstOrDefault(book => book.Id == id);
         return Book is null ? NotFound() : Page();
     }
